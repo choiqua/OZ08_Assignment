@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아인즈 울 고운의 이력서</title>
+    <!-- 서식은 전부 외부 CSS 파일로 (External CSS) -->
+    <link rel="stylesheet" href="ainz_style.css">
+    <!-- 아이콘: Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ① 모바일 상단바: 넓은 화면에선 CSS로 숨김, 좁은 화면에서만 보임 -->
+    <header class="topbar">
+        <button class="hamburger" type="button" aria-label="메뉴 열기" onclick="openNav()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="topbar-title">Ainz Ooal Gown</span>
+    </header>
+
+    <!-- ② 사이드바: 넓은 화면에선 항상 왼쪽 고정, 좁은 화면에선 햄버거로 열고 닫음 -->
+    <nav id="sidenav" class="sidebar">
+        <button class="closebtn" type="button" aria-label="메뉴 닫기" onclick="closeNav()">&times;</button>
+        <div class="sidebar-logo">
+            <i class="fa-solid fa-skull"></i>
+            <span>Nazarick</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#introduce" onclick="closeNav()">소개</a></li>
+            <li><a href="#status" onclick="closeNav()">종족 · 클래스</a></li>
+            <li><a href="#career" onclick="closeNav()">소속</a></li>
+            <li><a href="#timeline" onclick="closeNav()">주요 사건</a></li>
+            <li><a href="#relations" onclick="closeNav()">인물 관계</a></li>
+            <li><a href="#personality" onclick="closeNav()">성격</a></li>
+        </ul>
+    </nav>
+
+    <!-- ③ 메뉴가 열렸을 때 뒤를 어둡게 덮는 판 (누르면 닫힘) -->
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
+
+    <div id="resume" class="container">
+        <main>
+            <section id="resume-header">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>Ainz Ooal Gown</h1>
+                        <p class="subtitle">아인즈 울 고운 · 마도왕</p>
+                        <span><i class="fa-solid fa-chess-king"></i>&nbsp;나자릭 지하대분묘 통치자</span>
+                        <span><i class="fa-solid fa-ghost"></i>&nbsp;이형종 오버로드 (언데드)</span>
+                        <span><i class="fa-solid fa-star"></i>&nbsp;Lv. 100</span>
+                    </div>
+                    <!-- 캐릭터 그림 대신 아이콘으로 프로필 자리 표시 -->
+                    <div class="profile-photo" aria-label="프로필 아이콘">
+                        <i class="fa-solid fa-skull"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section id="introduce">
+                <h2>Introduce</h2>
+                <p>본명은 스즈키 사토루. 게임 시절에는 '모몬가'라는 닉네임으로 길드 '아인즈 울 고운'의 길드장을 맡았습니다.
+동료들이 하나둘 게임을 떠난 뒤에도 끝까지 남아 길드의 본거지 나자릭 지하대분묘를 지켰고, 이세계로 넘어온 뒤에는 길드의 이름을 자신의 이름으로 삼았습니다.
+현재는 아인즈 울 고운 마도국의 지도자로서 나자릭의 NPC들을 이끌고 있습니다.</p>
+            </section>
+
+            <section id="status">
+                <h2>종족 · 클래스</h2>
+                <div class="skills-group">
+                    <h3>Race</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">오버로드 (언데드 계열)</span>
+                        <span class="skill-tag">종족 레벨 40</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h3>Class (총 60)</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">네크로맨서 Lv.10</span>
+                        <span class="skill-tag">초즌 오브 언데드 Lv.10</span>
+                        <span class="skill-tag">이클립스 Lv.5</span>
+                        <span class="skill-tag">기타 Lv.35</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h3>Titles</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">불사자의 왕</span>
+                        <span class="skill-tag">파멸의 매직 캐스터</span>
+                        <span class="skill-tag">마도왕</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h3>Voice</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag">🇯🇵 히노 사토시</span>
+                        <span class="skill-tag">🇰🇷 엄상현 · 임채빈</span>
+                        <span class="skill-tag">🇺🇸 크리스토퍼 게레로</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="career">
+                <h2>소속</h2>
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <span class="company">길드 '아인즈 울 고운'</span>
+                        <span class="period">게임 시절 ~</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">길드장</span>
+                        <span class="rank">지고의 41인</span>
+                    </div>
+                    <ul class="details">
+                        <li>동료들이 떠난 뒤에도 마지막까지 길드를 지킨 유일한 멤버</li>
+                        <li>커스텀 NPC '판도라즈 액터'를 직접 제작</li>
+                        <li>게임에 많은 돈을 쓴 과금 유저로, 신기급 아이템을 다수 보유</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <span class="company">나자릭 지하대분묘</span>
+                        <span class="period">이세계 전이 후 ~</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">통치자</span>
+                        <span class="rank">절대 지배자</span>
+                    </div>
+                    <ul class="details">
+                        <li>수호자를 비롯한 나자릭의 NPC 전원을 지휘</li>
+                        <li>상징 문장을 길드 '아인즈 울 고운'의 문장으로 교체</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <span class="company">아인즈 울 고운 마도국</span>
+                        <span class="period">건국 ~ 현재</span>
+                    </div>
+                    <div class="role">
+                        <span class="position">마도왕</span>
+                        <span class="rank">국가 지도자</span>
+                    </div>
+                    <ul class="details">
+                        <li>모험자가 되고 싶은 이들을 마도국으로 초청</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="timeline">
+                <h2>주요 사건</h2>
+                <table class="info-table">
+                    <tr><th>1권</th><td>나자릭을 지키기로 하고 '아인즈 울 고운'이라는 이름을 채택</td></tr>
+                    <tr><th>3권</th><td>샤르티아 블러드폴른과 전투를 벌여 승리</td></tr>
+                    <tr><th>7권</th><td>침입자 '포사이트'에게 분노하며 나자릭 방어 의지를 드러냄</td></tr>
+                    <tr><th>9권</th><td>가제프 스트로노프와 일기토</td></tr>
+                    <tr><th>10권</th><td>모험자 지망생들을 마도국으로 초청</td></tr>
+                    <tr><th>16권</th><td>슬레인 법국 공격을 결정</td></tr>
+                </table>
+            </section>
+
+            <section id="relations">
+                <h2>인물 관계</h2>
+                <table class="info-table">
+                    <tr><th>알베도</th><td>나자릭의 총책임자</td></tr>
+                    <tr><th>판도라즈 액터</th><td>직접 만든 커스텀 NPC</td></tr>
+                    <tr><th>샤르티아</th><td>3권에서 맞붙어 승리한 수호자</td></tr>
+                    <tr><th>가제프</th><td>일기토를 벌인 상대, 이후 호감을 표현</td></tr>
+                    <tr><th>터치 미</th><td>게임 시절 '천적' 같은 존재로 언급되는 길드원</td></tr>
+                    <tr><th>페로론치노</th><td>게임 시절 사이가 좋았던 길드원</td></tr>
+                </table>
+            </section>
+
+            <section id="personality">
+                <h2>성격</h2>
+                <ul class="trait-list">
+                    <li><i class="fa-solid fa-heart"></i>길드 동료와 NPC들을 매우 아낌</li>
+                    <li><i class="fa-solid fa-shield-halved"></i>신중하고, 강자의 자만을 경계함</li>
+                    <li><i class="fa-solid fa-face-smile-wink"></i>스스로를 제멋대로라고 인정함</li>
+                    <li><i class="fa-solid fa-pen-nib"></i>네이밍 센스가 좋지 않다는 평가</li>
+                    <li><i class="fa-solid fa-user-group"></i>사람 얼굴과 이름을 잘 기억하지 못함</li>
+                </ul>
+            </section>
+        </main>
+        <footer class="page-footer">
+            내용 출처: 나무위키 '아인즈 울 고운' 문서를 요약 · HTML/CSS 연습용 페이지
+        </footer>
+    </div>
+
+    <!-- 햄버거 메뉴 열기/닫기 (동작만 JS, 모양은 CSS의 .open 클래스가 담당) -->
+    <script src="ainz_nav.js"></script>
+</body>
+</html>
