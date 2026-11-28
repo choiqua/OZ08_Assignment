@@ -29,10 +29,10 @@ function not(a) {
 }
 
 function xor(a, b) {
-  const both = and(a, b);           // ②
-  const notBoth = not(both);        // ③
+  const both = and(a, b);
+  const notBoth = not(both);
   const atLeastOne = or(a, b);
-  return and(atLeastOne, notBoth);  // ① 그리고 ③
+  return and(atLeastOne, notBoth);
 }
 
 function halfAdder(a,b) {
@@ -48,10 +48,16 @@ function fullAdder(a, b, carryIn) {
   return { sum: second.sum, carry: carryOut};
 }
 
-// [128,64,32,16, 8, 4, 2, 1]  ← 각 자리 값
+// 2진수 만들기
 
-const A = [0,0,0,0,0,1,0,1];   // 5
-const B = [0,0,0,0,0,0,1,1];   // 3
+function toBits(n) {
+  const bits = [0,0,0,0,0,0,0,0];
+  for (let i = bits.length - 1; i >= 0; i--){
+    bits[i] = n % 2;
+    n = Math.trunc(n / 2);
+  }
+  return bits;
+}
 
 function add8(A, B) {
   const result = [0,0,0,0,0,0,0,0];
@@ -65,4 +71,23 @@ function add8(A, B) {
 }
 
 
-console.log(add8(A, B));       // [0,0,0,0,1,0,0,0] = 8
+// 10진수 만들기
+function toNumber(bits) {
+  let total = 0;
+  let place = 1;
+  for (let i = bits.length - 1; i >= 0; i--){
+    if (bits[i] === 1){
+      total += place
+    }
+    place *= 2
+  }
+  return total
+}
+
+function not8(bits) {
+  const result = [0,0,0,0,0,0,0,0];
+  for (let i = bits.length -1; i >= 0; i--) {
+    result[i] = not(bits[i])
+  }
+  return result;
+}
